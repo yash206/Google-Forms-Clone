@@ -63,23 +63,6 @@ function deleteQuestion(button_id) {
     document.getElementById(`${q_id}`).remove(); // Remove Question
 }
 
-`
-In the database the information should be stored in this way - 
-{
-    title:"My First Form",
-    description:"My first description",
-    data:{
-        'question1':{
-            questionText:'This is Question 1',
-            options:['Option 1', 'Option 2', 'Option 3']
-        },
-        'question2':{
-            questionText:'This is Question 2',
-            options:['Option 1', 'Option 2', 'Option 3']
-        }
-    }
-}
-`
 
 let form = document.getElementById('questionForm')
 
@@ -112,7 +95,6 @@ form.addEventListener('submit', function(e){
         }(),
     };
 
-    console.log(formData)
 
     fetch(form.action, {
         method:'POST',

@@ -8,9 +8,6 @@ import json
 
 form = Form()
 
-def get_random_uuid():
-    return 'my_simple_uuid'
-
 def home(request):
     forms = form.findall()
     return render(request, 'home.html', {
