@@ -50,6 +50,15 @@ def get_response_from_user(request, pk):
             })
         form.update_response(pk, response)
         return render(request, 'thankyou.html')
+    else:
+        try:
+            form_data = form.find(pk)
+            return render(request, "get_response_from_user.html",{
+                'pk':pk,
+                'form_data':form_data
+            })
+        except:
+            raise Http404('Form not found')
 
 def responses(request, pk):
     form_data = form.find(pk)
